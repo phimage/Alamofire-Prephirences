@@ -12,7 +12,7 @@ By using remote preferences you can remotely control the behavior of your app, a
 It's built on top of [Alamofire](https://github.com/Alamofire/Alamofire) and [Prephirences](https://github.com/phimage/Prephirences), and provides methods to load from remote `plist` or `json` files.
 
 # Usage #
-
+### Load with URL(Convertible)
 On your `NSUserDefault` or any `MutablePreferencesType`
 
 ```swift
@@ -36,6 +36,20 @@ And for JSON just change `loadPropertyListFromURL` by `loadJSONFromURL`
 ```swift
  mutablePref.loadJSONFromURL("http://example.com/pref.json")
 ```
+
+### Load with URLRequest
+For more complex request, instead of use simple URL you can create your own `NSURLRequest`
+
+```swift
+let url = NSURL(string: "http://example.com/pref.plist")!
+let mutableURLRequest = NSMutableURLRequest(URL: url)
+mutableURLRequest.HTTPMethod = "GET"
+... (add HTTPHeader, etc...)
+
+mutablePref.loadPropertyListFromURLRequest(mutableURLRequest)
+```
+
+
 
 # Setup #
 
