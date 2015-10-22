@@ -5,22 +5,22 @@
              )](https://developer.apple.com/swift) [![Cocoapod](http://img.shields.io/cocoapods/v/Alamofire-Prephirences.svg?style=flat)](http://cocoadocs.org/docsets/Alamofire-Prephirences/)
 
 
-[<img align="left" src="logo-128x128.png" hspace="20">](#logo) Remote preferences and configurations for your application.
+[<img align="left" src="logo.png" hspace="20">](#logo) Remote preferences and configurations for your application.
 
-By using remote preferences you can remotely control the behavior of your app, allowing you to active a feature, to make impromptu A/B tests, or to add a simple "message of the day".
+By using remote preferences you can remotely control the behavior of your app, allowing you to active a feature, to make impromptu A/B tests or to add a simple "message of the day".
 
 It's built on top of [Alamofire](https://github.com/Alamofire/Alamofire) and [Prephirences](https://github.com/phimage/Prephirences), and provides methods to load from remote `plist` or `json` files.
 
 # Usage #
-### Load with URL(Convertible)
-On your `NSUserDefault` or any `MutablePreferencesType`
+### Load from URL
+On your `NSUserDefault` or any `MutablePreferencesType` for `plist`
 
 ```swift
- mutablePref.loadPropertyListFromURL("http://example.com/pref.plist")
+ pref.loadPropertyListFromURL("http://example.com/pref.plist")
 ```
 ...or if you need a callbacks for success/failure
 ```swift
-mutablePref.loadPropertyListFromURL("http://example.Com/pref.plist",
+pref.loadPropertyListFromURL("http://example.Com/pref.plist",
 		completionHandler: { response in
 			switch response.result {
 				case .Success:
@@ -32,13 +32,18 @@ mutablePref.loadPropertyListFromURL("http://example.Com/pref.plist",
 )
 ```
 
-And for JSON just change `loadPropertyListFromURL` by `loadJSONFromURL`
+And for `JSON`format, just change `loadPropertyListFromURL` by `loadJSONFromURL`
 ```swift
- mutablePref.loadJSONFromURL("http://example.com/pref.json")
+ pref.loadJSONFromURL("http://example.com/pref.json")
 ```
 
-### Load with URLRequest
-For more complex request, instead of use simple URL you can create your own `NSURLRequest`
+You can also use custom alamofire `ResponseSerializer`, which must provide a `Dictionary`
+```swift
+ pref.loadFromURL("http://example.com/pref.ext", format: Custom(MyReponseSerializer))
+```
+
+### Load from URLRequest
+For more complex request, instead of using simple URL, you can implement alamofire `URLRequestConvertible` or provide your own `NSURLRequest`
 
 ```swift
 let url = NSURL(string: "http://example.com/pref.plist")!
@@ -62,7 +67,7 @@ If not already done :
 Then :
 - Add `pod 'Alamofire-Prephirences'` to your `Podfile` and run `pod install`.
 
-*Add `use_frameworks!` to the end of the `Podfile`.*
+*Don't forget to add `use_frameworks!` to the end of the `Podfile`.*
 
 # Licence #
 ```

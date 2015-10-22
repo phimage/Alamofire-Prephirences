@@ -92,6 +92,40 @@ class Alamofire_PrephirencesTests: XCTestCase {
         }
     }
     
+    func testLoadCustomFromURL() {
+        let pref : MutableDictionaryPreferences = [:]
+        
+        let expectation = expectationWithDescription("request should succeed")
+        
+        var response : Response<AnyObject, NSError>? = nil
+        pref.loadFromURL("https://raw.githubusercontent.com/CocoaPods/Specs/master/Specs/Prephirences/2.0.0/Prephirences.podspec.json",
+            format: .Custom(Request.JSONResponseSerializer(options: .AllowFragments)),
+            completionHandler: { closureResponse in
+                response = closureResponse
+                expectation.fulfill()
+        })
+        
+        waitForExpectationsWithTimeout(defaultTimeout, handler: nil)
+        
+        if let response = response {
+            XCTAssertNotNil(response.request, "request should not be nil")
+            XCTAssertNotNil(response.response, "response should not be nil")
+            XCTAssertNotNil(response.data, "data should not be nil")
+            
+            switch response.result {
+            case .Success:
+                print("\(pref.dictionary())")
+                break
+            case .Failure(let error):
+                XCTFail(error.localizedDescription)
+            }
+            
+        } else {
+            XCTFail("response should not be nil")
+        }
+    }
+
+    
     
 }
  

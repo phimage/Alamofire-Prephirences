@@ -12,6 +12,7 @@
 		C436A1931BCF8DC100B8CAD1 /* AlamofirePrephirences.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C436A1881BCF8DC100B8CAD1 /* AlamofirePrephirences.framework */; settings = {ASSET_TAGS = (); }; };
 		C436A1981BCF8DC100B8CAD1 /* Alamofire_PrephirencesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C436A1971BCF8DC100B8CAD1 /* Alamofire_PrephirencesTests.swift */; };
 		C436A1A31BCF8F4500B8CAD1 /* MutablePreferencesType+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = C436A1A21BCF8F4500B8CAD1 /* MutablePreferencesType+Alamofire.swift */; settings = {ASSET_TAGS = (); }; };
+		C4BDE7BE1BD8D77E00442B18 /* SerializationFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BDE7BD1BD8D77E00442B18 /* SerializationFormat.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +36,7 @@
 		C436A1971BCF8DC100B8CAD1 /* Alamofire_PrephirencesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alamofire_PrephirencesTests.swift; sourceTree = "<group>"; };
 		C436A1991BCF8DC100B8CAD1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C436A1A21BCF8F4500B8CAD1 /* MutablePreferencesType+Alamofire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MutablePreferencesType+Alamofire.swift"; sourceTree = "<group>"; };
+		C4BDE7BD1BD8D77E00442B18 /* SerializationFormat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SerializationFormat.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 				C436A18B1BCF8DC100B8CAD1 /* Alamofire-Prephirences.h */,
 				C436A18D1BCF8DC100B8CAD1 /* Info.plist */,
 				C436A1A21BCF8F4500B8CAD1 /* MutablePreferencesType+Alamofire.swift */,
+				C4BDE7BD1BD8D77E00442B18 /* SerializationFormat.swift */,
 			);
 			path = "Alamofire-Prephirences";
 			sourceTree = "<group>";
@@ -259,6 +262,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C436A1A31BCF8F4500B8CAD1 /* MutablePreferencesType+Alamofire.swift in Sources */,
+				C4BDE7BE1BD8D77E00442B18 /* SerializationFormat.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

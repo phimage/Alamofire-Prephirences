@@ -25,28 +25,9 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-
 import Foundation
 import Prephirences
 import Alamofire
-
-enum FileSerializationFormat {
-    case PropertyList(NSPropertyListReadOptions), JSON(NSJSONReadingOptions)
-    
-    var errorCode: Error.Code {
-        switch self {
-        case PropertyList: return Error.Code.PropertyListSerializationFailed
-        case JSON: return Error.Code.JSONSerializationFailed
-        }
-    }
-    
-    var responseSerializer: ResponseSerializer<AnyObject, NSError> {
-        switch self {
-        case PropertyList(let options): return Request.propertyListResponseSerializer(options: options)
-        case JSON(let options): return Request.JSONResponseSerializer(options: options)
-        }
-    }
-}
 
 public extension MutablePreferencesType {
 
@@ -66,40 +47,39 @@ public extension MutablePreferencesType {
         return loadFromURLRequest(URLRequest, format: .JSON(.AllowFragments), completionHandler: completionHandler)
     }
 
-    // MARK: private load
-    private func loadFromURL(url: URLStringConvertible, format: FileSerializationFormat, completionHandler: (Response<AnyObject, NSError> -> Void)? = nil) -> Request {
+    // MARK: with format
+    public func loadFromURL(url: URLStringConvertible, format: SerializationFormat, completionHandler: (Response<AnyObject, NSError> -> Void)? = nil) -> Request {
         return responseToRequest(Alamofire.request(.GET, url), format: format, completionHandler: completionHandler)
     }
 
-    private func loadFromURLRequest(URLRequest: URLRequestConvertible, format: FileSerializationFormat, completionHandler: (Response<AnyObject, NSError> -> Void)? = nil) -> Request {
+    public func loadFromURLRequest(URLRequest: URLRequestConvertible, format: SerializationFormat, completionHandler: (Response<AnyObject, NSError> -> Void)? = nil) -> Request {
         return responseToRequest(Alamofire.request(URLRequest), format: format, completionHandler: completionHandler)
     }
 
     // MARK: response
-    private func responseToRequest(request: Request, format: FileSerializationFormat, completionHandler: (Response<AnyObject, NSError> -> Void)? = nil) -> Request  {
+    private func responseToRequest(request: Request, format: SerializationFormat, completionHandler: (Response<AnyObject, NSError> -> Void)? = nil) -> Request  {
         request.validate() // XXX could add here accepted content type
         // XXX if no format defined, could get returned content-type from responseContentType = response.MIMEType, responseMIMEType = MIMEType(responseContentType)
-
-        return request.response(responseSerializer: format.responseSerializer){ response in
-                switch response.result {
-                case .Success(let object):
-                    guard let dico = object as? [String : AnyObject] else {
-                        let error = Error.errorWithCode(format.errorCode, failureReason: "Unable to convert to dictionnary")
-                        let failureResponse = Response<AnyObject, NSError>(request: response.request,
-                            response: response.response,
-                            data: response.data,
-                            result: .Failure(error))
-                        
-                        completionHandler?(failureResponse)
-                        break
-                    }
-                    self.setObjectsForKeysWithDictionary(dico)
-                    completionHandler?(response)
-                case .Failure:
-                    completionHandler?(response)
+        let responseSerializer = format.responseSerializer
+        return request.response(responseSerializer: responseSerializer){
+            response in
+            switch response.result {
+            case .Success(let object):
+                guard let dico = object as? [String : AnyObject] else {
+                    let error = Error.errorWithCode(format.errorCode, failureReason: "Unable to convert to dictionnary")
+                    let failureResponse = Response<AnyObject, NSError>(request: response.request,
+                        response: response.response,
+                        data: response.data,
+                        result: .Failure(error))
+                    
+                    completionHandler?(failureResponse)
+                    break
                 }
+                self.setObjectsForKeysWithDictionary(dico)
+                completionHandler?(response)
+            case .Failure:
+                completionHandler?(response)
+            }
         }
-        
     }
- 
 }
