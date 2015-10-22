@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "Alamofire-Prephirences"
-  s.version      = "1.0.0"
+  s.version      = "1.0.1"
   s.summary      = "Remote preference and configuration for your application"
   s.homepage    = "https://github.com/phimage/Alamofire-Prephirences"
   s.license     = { :type => "MIT" }
