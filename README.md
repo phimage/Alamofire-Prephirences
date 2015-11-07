@@ -10,6 +10,7 @@
 By using remote preferences you can remotely control the behavior of your app, allowing you to active a feature, to make impromptu A/B tests or to add a simple "message of the day".
 
 It's built on top of [Alamofire](https://github.com/Alamofire/Alamofire) and [Prephirences](https://github.com/phimage/Prephirences), and provides methods to load from remote `plist` or `json` files.
+You can also have custom format like `xml` or `yaml` 
 
 # Usage #
 ### Load from URL
@@ -18,7 +19,7 @@ On your `NSUserDefault` or any `MutablePreferencesType` for `plist`
 ```swift
  pref.loadPropertyListFromURL("http://example.com/pref.plist")
 ```
-...or if you need a callbacks for success/failure
+...or if you need a callback for success/failure
 ```swift
 pref.loadPropertyListFromURL("http://example.Com/pref.plist",
 		completionHandler: { response in
@@ -37,10 +38,14 @@ And for `JSON`format, just change `loadPropertyListFromURL` by `loadJSONFromURL`
  pref.loadJSONFromURL("http://example.com/pref.json")
 ```
 
-You can also use custom alamofire `ResponseSerializer`, which must provide a `Dictionary`
+## Custom format
+You can also use custom alamofire `ResponseSerializer`, which must convert file to `Dictionary`
 ```swift
  pref.loadFromURL("http://example.com/pref.ext", format: Custom(MyReponseSerializer))
 ```
+Some repo with other format
+- XML : [AlamofireXMLRPC](https://github.com/kodlian/AlamofireXMLRPC)
+- Yaml : [Alamofire-YamlSwift] (https://github.com/phimage/Alamofire-YamlSwift)
 
 ### Load from URLRequest
 For more complex request, instead of using simple URL, you can implement alamofire `URLRequestConvertible` or provide your own `NSURLRequest`
@@ -60,7 +65,7 @@ mutablePref.loadPropertyListFromURLRequest(mutableURLRequest)
 
 ## Using [cocoapods](http://cocoapods.org/) ##
 
-If not already done :
+If not already done you can optionally :
 - Add `pod 'Alamofire'` to your `Podfile`.
 - Add `pod 'Prephirences'` to your `Podfile`.
 
