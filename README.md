@@ -41,7 +41,7 @@ And for `JSON`format, just change `loadPropertyListFromURL` by `loadJSONFromURL`
 ## Custom format
 You can also use custom alamofire `ResponseSerializer`, which must convert file to `Dictionary`
 ```swift
- pref.loadFromURL("http://example.com/pref.ext", format: Custom(MyReponseSerializer))
+ pref.loadFromURL("http://example.com/pref.ext", format: .Custom(MyReponseSerializer))
 ```
 Some repo with other format
 - XML : [AlamofireXMLRPC](https://github.com/kodlian/AlamofireXMLRPC)
