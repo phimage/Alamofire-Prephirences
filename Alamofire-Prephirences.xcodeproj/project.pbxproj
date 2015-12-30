@@ -8,11 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		3A5865674D5E63C3FC744FA0 /* Pods_AlamofirePrephirences.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 109AD0C1DA75ADEF64DAC4A4 /* Pods_AlamofirePrephirences.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		C43361F91C16F5F400D76B89 /* AlamofirePrephirencesOSX.h in Headers */ = {isa = PBXBuildFile; fileRef = C43361F81C16F5F400D76B89 /* AlamofirePrephirencesOSX.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C43362061C16F61300D76B89 /* AlamofirePrephirencesTVOS.h in Headers */ = {isa = PBXBuildFile; fileRef = C43362051C16F61300D76B89 /* AlamofirePrephirencesTVOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C433620B1C16F62200D76B89 /* MutablePreferencesType+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = C436A1A21BCF8F4500B8CAD1 /* MutablePreferencesType+Alamofire.swift */; };
+		C433620C1C16F62200D76B89 /* SerializationFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BDE7BD1BD8D77E00442B18 /* SerializationFormat.swift */; };
+		C433620D1C16F62200D76B89 /* MutablePreferencesType+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = C436A1A21BCF8F4500B8CAD1 /* MutablePreferencesType+Alamofire.swift */; };
+		C433620E1C16F62200D76B89 /* SerializationFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BDE7BD1BD8D77E00442B18 /* SerializationFormat.swift */; };
 		C436A18C1BCF8DC100B8CAD1 /* Alamofire-Prephirences.h in Headers */ = {isa = PBXBuildFile; fileRef = C436A18B1BCF8DC100B8CAD1 /* Alamofire-Prephirences.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C436A1931BCF8DC100B8CAD1 /* AlamofirePrephirences.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C436A1881BCF8DC100B8CAD1 /* AlamofirePrephirences.framework */; settings = {ASSET_TAGS = (); }; };
+		C436A1931BCF8DC100B8CAD1 /* AlamofirePrephirences.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C436A1881BCF8DC100B8CAD1 /* AlamofirePrephirences.framework */; };
 		C436A1981BCF8DC100B8CAD1 /* Alamofire_PrephirencesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C436A1971BCF8DC100B8CAD1 /* Alamofire_PrephirencesTests.swift */; };
-		C436A1A31BCF8F4500B8CAD1 /* MutablePreferencesType+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = C436A1A21BCF8F4500B8CAD1 /* MutablePreferencesType+Alamofire.swift */; settings = {ASSET_TAGS = (); }; };
-		C4BDE7BE1BD8D77E00442B18 /* SerializationFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BDE7BD1BD8D77E00442B18 /* SerializationFormat.swift */; settings = {ASSET_TAGS = (); }; };
+		C436A1A31BCF8F4500B8CAD1 /* MutablePreferencesType+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = C436A1A21BCF8F4500B8CAD1 /* MutablePreferencesType+Alamofire.swift */; };
+		C4BDE7BE1BD8D77E00442B18 /* SerializationFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BDE7BD1BD8D77E00442B18 /* SerializationFormat.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +35,12 @@
 		109AD0C1DA75ADEF64DAC4A4 /* Pods_AlamofirePrephirences.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AlamofirePrephirences.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		67E4D33B538A350F9C9455AF /* Pods-AlamofirePrephirences.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlamofirePrephirences.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AlamofirePrephirences/Pods-AlamofirePrephirences.debug.xcconfig"; sourceTree = "<group>"; };
 		7F1FD15FCD31623A59085874 /* Pods-AlamofirePrephirences.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlamofirePrephirences.release.xcconfig"; path = "Pods/Target Support Files/Pods-AlamofirePrephirences/Pods-AlamofirePrephirences.release.xcconfig"; sourceTree = "<group>"; };
+		C43361F61C16F5F400D76B89 /* AlamofirePrephirences.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AlamofirePrephirences.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C43361F81C16F5F400D76B89 /* AlamofirePrephirencesOSX.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlamofirePrephirencesOSX.h; sourceTree = "<group>"; };
+		C43361FA1C16F5F400D76B89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C43362031C16F61300D76B89 /* AlamofirePrephirences.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AlamofirePrephirences.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C43362051C16F61300D76B89 /* AlamofirePrephirencesTVOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlamofirePrephirencesTVOS.h; sourceTree = "<group>"; };
+		C43362071C16F61300D76B89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C436A1881BCF8DC100B8CAD1 /* AlamofirePrephirences.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AlamofirePrephirences.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C436A18B1BCF8DC100B8CAD1 /* Alamofire-Prephirences.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Alamofire-Prephirences.h"; sourceTree = "<group>"; };
 		C436A18D1BCF8DC100B8CAD1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -40,6 +52,20 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		C43361F21C16F5F400D76B89 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C43361FF1C16F61300D76B89 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C436A1841BCF8DC100B8CAD1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -76,11 +102,31 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		C43361F71C16F5F400D76B89 /* AlamofirePrephirencesOSX */ = {
+			isa = PBXGroup;
+			children = (
+				C43361F81C16F5F400D76B89 /* AlamofirePrephirencesOSX.h */,
+				C43361FA1C16F5F400D76B89 /* Info.plist */,
+			);
+			path = AlamofirePrephirencesOSX;
+			sourceTree = "<group>";
+		};
+		C43362041C16F61300D76B89 /* AlamofirePrephirencesTVOS */ = {
+			isa = PBXGroup;
+			children = (
+				C43362051C16F61300D76B89 /* AlamofirePrephirencesTVOS.h */,
+				C43362071C16F61300D76B89 /* Info.plist */,
+			);
+			path = AlamofirePrephirencesTVOS;
+			sourceTree = "<group>";
+		};
 		C436A17E1BCF8DC100B8CAD1 = {
 			isa = PBXGroup;
 			children = (
 				C436A18A1BCF8DC100B8CAD1 /* Alamofire-Prephirences */,
 				C436A1961BCF8DC100B8CAD1 /* Alamofire-PrephirencesTests */,
+				C43361F71C16F5F400D76B89 /* AlamofirePrephirencesOSX */,
+				C43362041C16F61300D76B89 /* AlamofirePrephirencesTVOS */,
 				C436A1891BCF8DC100B8CAD1 /* Products */,
 				2A3AB789DDDB3820EDA9A56C /* Pods */,
 				2B089A0F5386444B2BBA7D3B /* Frameworks */,
@@ -92,6 +138,8 @@
 			children = (
 				C436A1881BCF8DC100B8CAD1 /* AlamofirePrephirences.framework */,
 				C436A1921BCF8DC100B8CAD1 /* AlamofirePrephirencesTests.xctest */,
+				C43361F61C16F5F400D76B89 /* AlamofirePrephirences.framework */,
+				C43362031C16F61300D76B89 /* AlamofirePrephirences.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -119,6 +167,22 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		C43361F31C16F5F400D76B89 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C43361F91C16F5F400D76B89 /* AlamofirePrephirencesOSX.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C43362001C16F61300D76B89 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C43362061C16F61300D76B89 /* AlamofirePrephirencesTVOS.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C436A1851BCF8DC100B8CAD1 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -130,6 +194,42 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		C43361F51C16F5F400D76B89 /* AlamofirePrephirencesOSX */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C43361FD1C16F5F400D76B89 /* Build configuration list for PBXNativeTarget "AlamofirePrephirencesOSX" */;
+			buildPhases = (
+				C43361F11C16F5F400D76B89 /* Sources */,
+				C43361F21C16F5F400D76B89 /* Frameworks */,
+				C43361F31C16F5F400D76B89 /* Headers */,
+				C43361F41C16F5F400D76B89 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AlamofirePrephirencesOSX;
+			productName = AlamofirePrephirencesOSX;
+			productReference = C43361F61C16F5F400D76B89 /* AlamofirePrephirences.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		C43362021C16F61300D76B89 /* AlamofirePrephirencesTVOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C43362081C16F61300D76B89 /* Build configuration list for PBXNativeTarget "AlamofirePrephirencesTVOS" */;
+			buildPhases = (
+				C43361FE1C16F61300D76B89 /* Sources */,
+				C43361FF1C16F61300D76B89 /* Frameworks */,
+				C43362001C16F61300D76B89 /* Headers */,
+				C43362011C16F61300D76B89 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AlamofirePrephirencesTVOS;
+			productName = AlamofirePrephirencesTVOS;
+			productReference = C43362031C16F61300D76B89 /* AlamofirePrephirences.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		C436A1871BCF8DC100B8CAD1 /* AlamofirePrephirences */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = C436A19C1BCF8DC100B8CAD1 /* Build configuration list for PBXNativeTarget "AlamofirePrephirences" */;
@@ -178,6 +278,13 @@
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = phimage;
 				TargetAttributes = {
+					C43361F51C16F5F400D76B89 = {
+						CreatedOnToolsVersion = 7.1.1;
+					};
+					C43362021C16F61300D76B89 = {
+						CreatedOnToolsVersion = 7.1.1;
+						DevelopmentTeam = GGU39CDBL2;
+					};
 					C436A1871BCF8DC100B8CAD1 = {
 						CreatedOnToolsVersion = 7.0.1;
 						DevelopmentTeam = GGU39CDBL2;
@@ -201,12 +308,28 @@
 			projectRoot = "";
 			targets = (
 				C436A1871BCF8DC100B8CAD1 /* AlamofirePrephirences */,
+				C43361F51C16F5F400D76B89 /* AlamofirePrephirencesOSX */,
+				C43362021C16F61300D76B89 /* AlamofirePrephirencesTVOS */,
 				C436A1911BCF8DC100B8CAD1 /* AlamofirePrephirencesTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		C43361F41C16F5F400D76B89 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C43362011C16F61300D76B89 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C436A1861BCF8DC100B8CAD1 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -257,6 +380,24 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		C43361F11C16F5F400D76B89 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C433620B1C16F62200D76B89 /* MutablePreferencesType+Alamofire.swift in Sources */,
+				C433620C1C16F62200D76B89 /* SerializationFormat.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C43361FE1C16F61300D76B89 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C433620D1C16F62200D76B89 /* MutablePreferencesType+Alamofire.swift in Sources */,
+				C433620E1C16F62200D76B89 /* SerializationFormat.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C436A1831BCF8DC100B8CAD1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -285,6 +426,86 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		C43361FB1C16F5F400D76B89 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = AlamofirePrephirencesOSX/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_BUNDLE_IDENTIFIER = tv.phimage.AlamofirePrephirencesOSX;
+				PRODUCT_NAME = AlamofirePrephirences;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		C43361FC1C16F5F400D76B89 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = AlamofirePrephirencesOSX/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_BUNDLE_IDENTIFIER = tv.phimage.AlamofirePrephirencesOSX;
+				PRODUCT_NAME = AlamofirePrephirences;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		C43362091C16F61300D76B89 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = AlamofirePrephirencesTVOS/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = tv.phimage.AlamofirePrephirencesTVOS;
+				PRODUCT_NAME = AlamofirePrephirences;
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+			};
+			name = Debug;
+		};
+		C433620A1C16F61300D76B89 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = AlamofirePrephirencesTVOS/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = tv.phimage.AlamofirePrephirencesTVOS;
+				PRODUCT_NAME = AlamofirePrephirences;
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+			};
+			name = Release;
+		};
 		C436A19A1BCF8DC100B8CAD1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -434,6 +655,22 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		C43361FD1C16F5F400D76B89 /* Build configuration list for PBXNativeTarget "AlamofirePrephirencesOSX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C43361FB1C16F5F400D76B89 /* Debug */,
+				C43361FC1C16F5F400D76B89 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		C43362081C16F61300D76B89 /* Build configuration list for PBXNativeTarget "AlamofirePrephirencesTVOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C43362091C16F61300D76B89 /* Debug */,
+				C433620A1C16F61300D76B89 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		C436A1821BCF8DC100B8CAD1 /* Build configuration list for PBXProject "Alamofire-Prephirences" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

@@ -1,8 +1,8 @@
 # Alamofire - Prephirences
-[![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat
-            )](http://mit-license.org) [![Platform](http://img.shields.io/badge/platform-ios_osx-lightgrey.svg?style=flat
-             )](https://developer.apple.com/resources/) [![Language](http://img.shields.io/badge/language-swift-orange.svg?style=flat
-             )](https://developer.apple.com/swift) [![Cocoapod](http://img.shields.io/cocoapods/v/Alamofire-Prephirences.svg?style=flat)](http://cocoadocs.org/docsets/Alamofire-Prephirences/)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](http://mit-license.org)
+[![Platform](http://img.shields.io/badge/platform-ios_osx-lightgrey.svg?style=flat)](https://developer.apple.com/resources/)
+[![Language](http://img.shields.io/badge/language-swift-orange.svg?style=flat)](https://developer.apple.com/swift)
+[![Cocoapod](http://img.shields.io/cocoapods/v/Alamofire-Prephirences.svg?style=flat)](http://cocoadocs.org/docsets/Alamofire-Prephirences/)
 
 
 [<img align="left" src="logo.png" hspace="20">](#logo) Remote preferences and configurations for your application.
@@ -10,7 +10,7 @@
 By using remote preferences you can remotely control the behavior of your app, allowing you to active a feature, to make impromptu A/B tests or to add a simple "message of the day".
 
 It's built on top of [Alamofire](https://github.com/Alamofire/Alamofire) and [Prephirences](https://github.com/phimage/Prephirences), and provides methods to load from remote `plist` or `json` files.
-You can also have custom format like `xml` or `yaml` 
+You can also have custom format like `xml` or `yaml`
 
 # Usage #
 ### Load from URL
