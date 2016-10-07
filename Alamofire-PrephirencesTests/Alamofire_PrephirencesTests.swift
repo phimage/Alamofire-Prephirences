@@ -13,7 +13,7 @@ import Alamofire
 import Prephirences
 
 class Alamofire_PrephirencesTests: XCTestCase {
-    let defaultTimeout: NSTimeInterval = 10
+    let defaultTimeout: TimeInterval = 10
     
     override func setUp() {
         super.setUp()
@@ -28,18 +28,18 @@ class Alamofire_PrephirencesTests: XCTestCase {
     func testLoadPropertyListFromURL() {
         let pref : MutableDictionaryPreferences = [:]
 
-        let expectation = expectationWithDescription("request should succeed")
+        let expectation = self.expectation(description: "request should succeed")
         
-        var response : Response<AnyObject, NSError>? = nil
-        pref.loadPropertyListFromURL("https://raw.githubusercontent.com/phimage/Prephirences/master/PrephirencesiOS/Info.plist",
+        var response : DataResponse<Any>? = nil
+        pref.loadPropertyList(from: "https://raw.githubusercontent.com/phimage/Prephirences/master/PrephirencesiOS/Info.plist",
             completionHandler: { closureResponse in
                 response = closureResponse
                 expectation.fulfill()
         })
         
-        pref.loadPropertyListFromURL("https://raw.githubusercontent.com/phimage/Prephirences/master/PrephirencesiOS/Info.plist")
+        pref.loadPropertyList(from: "https://raw.githubusercontent.com/phimage/Prephirences/master/PrephirencesiOS/Info.plist")
         
-        waitForExpectationsWithTimeout(defaultTimeout, handler: nil)
+        waitForExpectations(timeout: defaultTimeout, handler: nil)
 
         if let response = response {
             XCTAssertNotNil(response.request, "request should not be nil")
@@ -47,10 +47,10 @@ class Alamofire_PrephirencesTests: XCTestCase {
             XCTAssertNotNil(response.data, "data should not be nil")
             
             switch response.result {
-            case .Success:
+            case .success:
                 print("\(pref.dictionary())")
                 break
-            case .Failure(let error):
+            case .failure(let error):
                 XCTFail(error.localizedDescription)
             }
             
@@ -63,16 +63,16 @@ class Alamofire_PrephirencesTests: XCTestCase {
     func testLoadJSONFromURL() {
         let pref : MutableDictionaryPreferences = [:]
         
-        let expectation = expectationWithDescription("request should succeed")
+        let expectation = self.expectation(description: "request should succeed")
         
-        var response : Response<AnyObject, NSError>? = nil
-        pref.loadJSONFromURL("https://raw.githubusercontent.com/CocoaPods/Specs/master/Specs/Prephirences/2.0.0/Prephirences.podspec.json",
+        var response : DataResponse<Any>? = nil
+        pref.loadJSON(from: "https://raw.githubusercontent.com/CocoaPods/Specs/master/Specs/Prephirences/2.0.0/Prephirences.podspec.json",
             completionHandler: { closureResponse in
                 response = closureResponse
                 expectation.fulfill()
         })
         
-        waitForExpectationsWithTimeout(defaultTimeout, handler: nil)
+        waitForExpectations(timeout: defaultTimeout, handler: nil)
         
         if let response = response {
             XCTAssertNotNil(response.request, "request should not be nil")
@@ -80,10 +80,10 @@ class Alamofire_PrephirencesTests: XCTestCase {
             XCTAssertNotNil(response.data, "data should not be nil")
             
             switch response.result {
-            case .Success:
+            case .success:
                 print("\(pref.dictionary())")
                 break
-            case .Failure(let error):
+            case .failure(let error):
                 XCTFail(error.localizedDescription)
             }
             
@@ -95,17 +95,17 @@ class Alamofire_PrephirencesTests: XCTestCase {
     func testLoadCustomFromURL() {
         let pref : MutableDictionaryPreferences = [:]
         
-        let expectation = expectationWithDescription("request should succeed")
+        let expectation = self.expectation(description: "request should succeed")
         
-        var response : Response<AnyObject, NSError>? = nil
-        pref.loadFromURL("https://raw.githubusercontent.com/CocoaPods/Specs/master/Specs/Prephirences/2.0.0/Prephirences.podspec.json",
-            format: .Custom(Request.JSONResponseSerializer(options: .AllowFragments)),
+        var response : DataResponse<Any>? = nil
+        pref.load(from: "https://raw.githubusercontent.com/CocoaPods/Specs/master/Specs/Prephirences/2.0.0/Prephirences.podspec.json",
+            format: .custom(DataRequest.jsonResponseSerializer(options: .allowFragments)),
             completionHandler: { closureResponse in
                 response = closureResponse
                 expectation.fulfill()
         })
         
-        waitForExpectationsWithTimeout(defaultTimeout, handler: nil)
+        waitForExpectations(timeout: defaultTimeout, handler: nil)
         
         if let response = response {
             XCTAssertNotNil(response.request, "request should not be nil")
@@ -113,10 +113,10 @@ class Alamofire_PrephirencesTests: XCTestCase {
             XCTAssertNotNil(response.data, "data should not be nil")
             
             switch response.result {
-            case .Success:
+            case .success:
                 print("\(pref.dictionary())")
                 break
-            case .Failure(let error):
+            case .failure(let error):
                 XCTFail(error.localizedDescription)
             }
             

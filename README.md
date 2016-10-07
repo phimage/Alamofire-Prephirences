@@ -2,7 +2,7 @@
 [![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](http://mit-license.org)
 [![Platform](http://img.shields.io/badge/platform-ios_osx-lightgrey.svg?style=flat)](https://developer.apple.com/resources/)
 [![Language](http://img.shields.io/badge/language-swift-orange.svg?style=flat)](https://developer.apple.com/swift)
-[![Cocoapod](http://img.shields.io/cocoapods/v/Alamofire-Prephirences.svg?style=flat)](http://cocoadocs.org/docsets/Alamofire-Prephirences/)
+[![Cocoapod](http://img.shields.io/cocoapods/v/Alamofire-Prephirences.svg?style=flat)](http://cocoadocs.org/docsets/Alamofire-Prephirences/) [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
 
 [<img align="left" src="logo.png" hspace="20">](#logo) Remote preferences and configurations for your application.
@@ -14,52 +14,50 @@ You can also have custom format like `xml` or `yaml`
 
 # Usage #
 ### Load from URL
-On your `NSUserDefault` or any `MutablePreferencesType` for `plist`
+On your `UserDefault` or any `MutablePreferencesType` for `plist`
 
 ```swift
- pref.loadPropertyListFromURL("http://example.com/pref.plist")
+ pref.loadPropertyList(from: "http://example.com/pref.plist")
 ```
 ...or if you need a callback for success/failure
 ```swift
-pref.loadPropertyListFromURL("http://example.Com/pref.plist",
+pref.loadPropertyList(from: "http://example.Com/pref.plist",
 		completionHandler: { response in
 			switch response.result {
-				case .Success:
+				case .success:
 				...
-				case .Failure(let error):
+				case .failure(let error):
 				...
             }
 		}
 )
 ```
 
-And for `JSON`format, just change `loadPropertyListFromURL` by `loadJSONFromURL`
+And for `JSON`format, just change `loadPropertyList` by `loadJSON`
 ```swift
- pref.loadJSONFromURL("http://example.com/pref.json")
+ pref.loadJSON(from: "http://example.com/pref.json")
 ```
 
 ## Custom format
-You can also use custom alamofire `ResponseSerializer`, which must convert file to `Dictionary`
+You can also use custom alamofire `DataResponseSerializer`, which must convert file to `Dictionary`
 ```swift
- pref.loadFromURL("http://example.com/pref.ext", format: .Custom(MyReponseSerializer))
+ pref.load(from: "http://example.com/pref.ext", format: .custom(MyReponseSerializer))
 ```
 Some repo with other format
 - XML : [AlamofireXMLRPC](https://github.com/kodlian/AlamofireXMLRPC)
 - Yaml : [Alamofire-YamlSwift] (https://github.com/phimage/Alamofire-YamlSwift)
 
 ### Load from URLRequest
-For more complex request, instead of using simple URL, you can implement alamofire `URLRequestConvertible` or provide your own `NSURLRequest`
+For more complex request, instead of using simple URL, you can implement alamofire `URLRequestConvertible` or provide your own `URLRequest`
 
 ```swift
-let url = NSURL(string: "http://example.com/pref.plist")!
-let mutableURLRequest = NSMutableURLRequest(URL: url)
-mutableURLRequest.HTTPMethod = "GET"
+let url = URL(string: "http://example.com/pref.plist")!
+var urlRequest = URLRequest(url: url)
+urlRequest.httpMethod = "GET"
 ... (add HTTPHeader, etc...)
 
-mutablePref.loadPropertyListFromURLRequest(mutableURLRequest)
+mutablePref.loadPropertyList(from: urlRequest)
 ```
-
-
 
 # Setup #
 
@@ -73,6 +71,18 @@ Then :
 - Add `pod 'Alamofire-Prephirences'` to your `Podfile` and run `pod install`.
 
 *Don't forget to add `use_frameworks!` to the end of the `Podfile`.*
+
+## Using Carthage ##
+[Carthage](https://github.com/Carthage/Carthage) is a decentralized dependency manager for Objective-C and Swift.
+
+1. Add the project to your [Cartfile](https://github.com/Carthage/Carthage/blob/master/Documentation/Artifacts.md#cartfile).
+
+    ```
+    github "phimage/Alamofire-Prephirences"
+    ```
+
+2. Run `carthage update` and follow [the additional steps](https://github.com/Carthage/Carthage#getting-started)
+   in order to add Alamofire-Prephirences to your project.
 
 # Licence #
 ```

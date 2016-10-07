@@ -29,21 +29,23 @@ import Foundation
 import Alamofire
 
 public enum SerializationFormat {
-    case PropertyList(NSPropertyListReadOptions), JSON(NSJSONReadingOptions), Custom(ResponseSerializer<AnyObject, NSError>)
+    case propertyList(PropertyListSerialization.ReadOptions)
+    case json(JSONSerialization.ReadingOptions)
+    case custom(DataResponseSerializer<Any>)
 
-    var errorCode: Error.Code {
+    func failureReason(error: Error) -> AFError.ResponseSerializationFailureReason {
         switch self {
-        case PropertyList: return Error.Code.PropertyListSerializationFailed
-        case JSON: return Error.Code.JSONSerializationFailed
-        case Custom: return Error.Code.DataSerializationFailed
+        case .propertyList: return .propertyListSerializationFailed(error: error)
+        case .json: return .jsonSerializationFailed(error: error)
+        case .custom: return .jsonSerializationFailed(error: error)
         }
     }
 
-    var responseSerializer: ResponseSerializer<AnyObject, NSError> {
+    var responseSerializer: DataResponseSerializer<Any> {
         switch self {
-        case PropertyList(let options): return Request.propertyListResponseSerializer(options: options)
-        case JSON(let options): return Request.JSONResponseSerializer(options: options)
-        case Custom(let responseSerializer): return responseSerializer
+        case .propertyList(let options): return DataRequest.propertyListResponseSerializer(options: options)
+        case .json(let options): return DataRequest.jsonResponseSerializer(options: options)
+        case .custom(let responseSerializer): return responseSerializer
         }
     }
 }
